@@ -12,6 +12,7 @@ cloud based waste monitoring system
 #### Installation
 
 Install ThingSpeak Library and ESP8266wifi-master
+
 [Installing Libraries guide](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries)
 
 #### Connections
