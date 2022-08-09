@@ -6,6 +6,9 @@ cloud based waste monitoring system
 1. [NodeMcu](https://www.nodemcu.com/index_en.html)
 2. HC-SR04 Ultrasonic Sensor
 
+#### Software
+[Arduino IDE](https://www.arduino.cc/en/software)
+
 #### Installation
 
 Install ThingSpeak Library and ESP8266wifi-master
