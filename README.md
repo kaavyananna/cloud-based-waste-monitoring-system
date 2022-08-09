@@ -23,4 +23,7 @@ ultrasonic sensor -> NodeMcu module
 3. gnd -> gnd
 4. Vcc -> Vin 
 
+#### Sending sensor data to ThingSpeak
+
+Send the sensor data from NodeMcu to [ThingSpeak](https://thingspeak.com/)
 
