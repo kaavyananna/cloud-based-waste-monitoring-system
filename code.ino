@@ -32,7 +32,7 @@ void loop()
     Serial.println(ssid);
     while (WiFi.status() != WL_CONNECTED)
     {
-      WiFi.begin("moto","lolitsme");
+      WiFi.begin("",""); //write "ssid","password"
       Serial.print(".");
       delay(5000);
     }
