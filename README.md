@@ -1,6 +1,11 @@
 # cloud-based-waste-monitoring-system
 cloud based waste monitoring system
 
+#### Hardware
+
+1. [NodeMcu](https://www.nodemcu.com/index_en.html)
+2. HC-SR04 Ultrasonic Sensor
+
 #### Installation
 
 Install ThingSpeak Library and ESP8266wifi-master
