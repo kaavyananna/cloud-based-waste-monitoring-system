@@ -14,7 +14,7 @@ WiFiClient  client;
 
 unsigned long myChannelField = 898169; // Channel ID
 const int ChannelField = 1; // Which channel to write data
-const char * myWriteAPIKey = "BOQS5HJNR3W0BYKI"; // Your write API Key
+const char * myWriteAPIKey = "BOQS5HJNR3W0BYKI"; // enter your write API Key
 
 void setup()
 {
