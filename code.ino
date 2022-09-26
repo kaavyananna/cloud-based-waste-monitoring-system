@@ -1,20 +1,20 @@
 #include "ThingSpeak.h"
 #include <ESP8266WiFi.h>
   
-//----------- Enter you Wi-Fi Details---------//
+//----------- Enter your Wi-Fi and password details---------//
 char ssid[] = ""; //SSID
 char pass[] = ""; // Password
-//-------------------------------------------//
+//---------------------------------------------------------//
 
 const int trigger = 16;
 const int echo = 5;
 long T;
-float distanceCM;
+float amountOfEmptySpace;
 WiFiClient  client;
 
-unsigned long myChannelField = 898169; // Channel ID
-const int ChannelField = 1; // Which channel to write data
-const char * myWriteAPIKey = "BOQS5HJNR3W0BYKI"; // enter your write API Key
+unsigned long myChannelField = 898169;                 // Channel ID
+const int ChannelField = 1;                            // Write data to channel 1
+const char * myWriteAPIKey = "BOQS5HJNR3W0BYKI";       // enter write API Key
 
 void setup()
 {
@@ -24,6 +24,7 @@ void setup()
   WiFi.mode(WIFI_STA);
   ThingSpeak.begin(client);
 }
+
 void loop()
 {
   if (WiFi.status() != WL_CONNECTED)
@@ -32,7 +33,7 @@ void loop()
     Serial.println(ssid);
     while (WiFi.status() != WL_CONNECTED)
     {
-      WiFi.begin("",""); //write "ssid","password"
+      WiFi.begin("","");                                //include your "ssid","password"
       Serial.print(".");
       delay(5000);
     }
@@ -44,10 +45,10 @@ void loop()
   delayMicroseconds(10);
   digitalWrite(trigger, LOW);
   T = pulseIn(echo, HIGH);
-  distanceCM = T * 0.034;
-  distanceCM = distanceCM / 2;
+  amountOfEmptySpace = T * 0.034;
+  amountOfEmptySpace = amountOfEmptySpace / 2;
   Serial.print("Trash filled in cm: ");
-  Serial.println(distanceCM);
-  ThingSpeak.writeField(myChannelField, ChannelField, distanceCM, myWriteAPIKey);
+  Serial.println(amountOfEmptySpace);
+  ThingSpeak.writeField(myChannelField, ChannelField, amountOfEmptySpace, myWriteAPIKey);
   delay(1000);
 }
